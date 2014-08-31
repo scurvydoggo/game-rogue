@@ -1,25 +1,25 @@
-LIBTCOD = src/libtcod-1.5.1
-SDL = src/SDL-1.2.14
-
 BUILD = build
 BIN = bin
+RES = resources
 TARGET = $(BIN)/rogue
 CC = g++
-INCLUDES = -I$(LIBTCOD)/include -I$(SDL)/include
+INCLUDES = -I/usr/include/libtcod-1.5.1
+LIBS = -ltcod -ltcodxx -lSDL
 CFLAGS = $(INCLUDES) -g -Wall
-LFLAGS = $(INCLUDES) -g -Wall
+LFLAGS = $(INCLUDES) $(LIBS) -g -Wall
 OBJS = \
 	$(BUILD)/main.o
 
 $(TARGET) : $(OBJS)
 	@mkdir -p $(BIN)
+	@cp -r $(RES) $(BIN)
 	@echo " Linking..."
-	$(CC) $(LFLAGS) $^ -o $(TARGET)
+	$(CC) $^ $(LFLAGS) -o $(TARGET)
 
 $(BUILD)/%.o : src/%.cpp
 	@mkdir -p $(BUILD)
 	@echo " Compiling..."
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) -c $< $(CFLAGS) -o $@
 
 clean:
 	@echo " Cleaning..."

@@ -1,17 +1,11 @@
 # Rogue
 
-A little roguelike game to familiarise myself with CPP.
+A little roguelike game to familiarise myself with CPP development in linux.
 
-## Compiling
+# Compiling
 
-You need libtcod-1.5.2 and SDL 1.2 to compile this.
+Required libraries:
+ * libtcod-1.5.2
+ * SDL-1.2 
 
-Grab libtcod libraries at:
-http://doryen.eptalys.net/libtcod/download/
-
-Grab SDL libraries at:
-http://www.libsdl.org/download-1.2.php
-
-Extract to src/libtcod-1.5.1 and src/SDL-1.2.14
-
-Then run the makefile.
+Once they're in place, run the makefile.
