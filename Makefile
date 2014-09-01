@@ -8,7 +8,10 @@ LIBS = -ltcod -ltcodxx -lSDL
 CFLAGS = $(INCLUDES) -g -Wall
 LFLAGS = $(INCLUDES) $(LIBS) -g -Wall
 OBJS = \
-	$(BUILD)/main.o
+	$(BUILD)/main.o \
+    $(BUILD)/Actor.o \
+    $(BUILD)/Engine.o \
+    $(BUILD)/Map.o
 
 $(TARGET) : $(OBJS)
 	@mkdir -p $(BIN)
